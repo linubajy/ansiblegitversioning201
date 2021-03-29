@@ -1,0 +1,11 @@
+---
+# tasks file for gitdemo
+- name: Upgrade all packages
+  yum:
+    name: "*"
+    state: latest
+- name: reboot machine
+  command: shutdown -r now " Ansible triggered reboot"
+  async: 1
+  poll: 0
+  ignore_errors: true
